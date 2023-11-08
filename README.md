@@ -10,22 +10,23 @@ El mantenimiento predictivo es una estrategia clave en la industria para evitar 
 
 ## ✅```​Objetivos```
 
-1. Predecir si la fresadora fallará o no a través de algoritmos de **clasificación binaria**
+1. Predecir si la fresadora fallará o no, siguiendo un enfoque de **clasificación binaria**
 
-2. Predecir diferentes modos de falla de la fresadora a través de algoritmos de **clasificación multiclase**
+2. Predecir diferentes modos de falla de la fresadora a través de algoritmos de **clasificación multietiqueta**
 
 ## ​🤖​Algoritmos empleados
 
 - **Clasificación Binaria**
   - ```Regresión Logística```
   - ```Árboles de Decisión```
-  - ```Bosques Aleatorios (Random Forests)```
+  - ```Random Forest```
   - ```Support Vector Machines (SVM)```
   - ```Cat Boosting```
 
-- **Clasificación Multiclase**
-  - ```Regresión logística multiclase```
-  - ```Árboles de decisión multiclase```
+- **Clasificación Multietiqueta**
+  - ```Random Forest Classifier```
+  - ```KNeighbors Classifier```
+  - ```Support Vector Machines (SVM)```
 
 ## ​🛠️```​Desarrollo```
 
@@ -34,7 +35,7 @@ El desarrollo de este proyecto se dividió en 3 partes principales:
 1. **Pre-visualización de los datos**: a partir de este análisis se determinó realizar 2 modelos: uno a través de clasificación binaria y otro por medio de clasificación multiclase. Además de constatar que los datos se encuentran desequilibrados.
 2. **Clasificación Binaria**: se tomaron en un principio sólo las columnas ```['Type', 'Air_temperature(K)', 'Process_temperature(K)', 'Torque(Nm)',
 'Tool_wear(min)', 'Machine_failure','Rotational_speed(rad/s)']```
-3. **Clasificación Multiclase:** para este caso se tomaron en cuenta (no necesariamente son las features finales) las columnas ```['Type', 'Air_temperature(K)', 'Process_temperature(K)', 'Torque(Nm)', 'Tool_wear(min)', 'Machine_failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF','Rotational_speed(rad/s)']```
+3. **Clasificación Multietiqueta:** para este caso se tomaron en cuenta (no necesariamente son las features finales) las columnas ```['Type', 'Air_temperature(K)', 'Process_temperature(K)', 'Torque(Nm)', 'Tool_wear(min)', 'Machine_failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF','Rotational_speed(rad/s)']```
 
 Tanto en los desarrollos 2 y 3, se realizaron los siguientes pasos:
 
@@ -92,18 +93,18 @@ y_pred = bagging_classifier.predict(X_test)
 
 Donde:
 
-- Clase 1 (Positive) Fresadora Falla
-  - FP (Falsos Positivos): cuando la fresadora falló y el modelo predijo que falló, acertó 97 veces
-  - TP (Verdaderos Positivos): cuando la fresadora falló y el modelo predijo que no falló, erró 8 veces
-- Clase 0 (Negative) Fresadora No Falla
-  - TN (Verdaderos Negativos): cuando la fresadora no falló y el modelo predijo que no falló, acertó 2648 veces
-  - FN (Falsos Negativos): cuando la fresadora no falló pero el modelo predijo que la fresadora falló, erró 211 veces
+- **Clase 1 (Positive) ➜ Fresadora Falla**
+  - **FP (Falsos Positivos)**: cuando la fresadora falló y el modelo predijo que falló, acertó 97 veces
+  - **TP (Verdaderos Positivos)**: cuando la fresadora falló y el modelo predijo que no falló, erró 8 veces
+- **Clase 0 (Negative) ➜ Fresadora No Falla**
+  - **TN (Verdaderos Negativos)**: cuando la fresadora no falló y el modelo predijo que no falló, acertó 2648 veces
+  - **FN (Falsos Negativos)**: cuando la fresadora no falló pero el modelo predijo que la fresadora falló, erró 211 veces
 
 | Modelo | Accuracy| Precision |Recall| F1-Score| Training time|Prediction time|
 |------|------|------|------|------|------|------|
 Decision Tree Classifier (Balanced)|0.927000|0.973155|0.927000|0.94361|1.064231|0.007736|
 
-### 📌Clasificación Multiclase
+### 📌Clasificación Multietiqueta
 
 ## 💰```​Beneficios de estos modelos```
 
@@ -135,6 +136,8 @@ Si deseas contactarme, simplemente haz clic sobre mi nombre y serás redirigido 
 *Data Scientist*
 | [<img src="https://avatars.githubusercontent.com/u/123108361?v=4" width=115><br><sub>Danniela Rodríguez</sub>](https://www.linkedin.com/in/danniela-rodriguez-jove-/)
 | :---: |
+
+<div align="left">
 
 ## 🙌 ```Agradecimiento y Actualizaciones```
 
